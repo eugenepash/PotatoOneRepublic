@@ -1,0 +1,16 @@
+name: mytheme
+type: theme
+base theme: stable
+description: My first Drupal 9 theme.
+core: 8.x
+core_version_requirement: ^8 || ^9
+libraries:
+  - mytheme/global-styling
+  - barrio_localbook/bootstrap_cdn
+# Regions
+regions:
+  header: 'Header'
+  header_left: 'Header left'
+  header_right: 'Header right'
+  content: 'Content'
+  footer: 'Footer'

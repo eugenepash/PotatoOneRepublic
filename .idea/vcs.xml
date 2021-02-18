@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/themes/bootstrap_barrio/subtheme/assets/sites/Gorod-Domov-by" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/themes/bootstrap_barrio/subtheme/assets/sites/SiteCercovPostavy" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/themes/bootstrap_barrio/subtheme/assets/sites/TaimyProject" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/themes/bootstrap_barrio/subtheme/templates/layout/sites/Gorod-Domov-by" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/themes/bootstrap_barrio/subtheme/templates/layout/sites/SiteCercovPostavy" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/themes/bootstrap_barrio/subtheme/templates/layout/sites/TaimyProject" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/themes/mytheme/sites/Gorod-Domov-by" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/themes/mytheme/sites/SiteCercovPostavy" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/themes/mytheme/sites/TaimyProject" vcs="Git" />
+  </component>
+</project>

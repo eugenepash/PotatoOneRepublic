@@ -1,0 +1,202 @@
+{#
+/**
+ * @file
+ * Theme override for the basic structure of a single Drupal page.
+ *
+ * Variables:
+ * - logged_in: A flag indicating if user is logged in.
+ * - root_path: The root path of the current page (e.g., node, admin, user).
+ * - node_type: The content type for the current node, if the page is a node.
+ * - head_title: List of text elements that make up the head_title variable.
+ *   May contain or more of the following:
+ *   - title: The title of the page.
+ *   - name: The name of the site.
+ *   - slogan: The slogan of the site.
+ * - page_top: Initial rendered markup. This should be printed before 'page'.
+ * - page: The rendered page markup.
+ * - path_info.args: Array of URL arguments un aliassed.
+ * - page_bottom: Closing rendered markup. This variable should be printed after
+ *   'page'.
+ * - db_offline: A flag indicating if the database is offline.
+ * - placeholder_token: The token for generating head, css, js and js-bottom
+ *   placeholders.
+ *
+ * @see template_preprocess_html()
+ */
+#}
+{%
+  set body_classes = [
+    logged_in ? 'user-logged-in',
+    not root_path ? 'path-frontpage' : 'path-' ~ root_path|clean_class,
+    node_type ? 'node--type-' ~ node_type|clean_class,
+    db_offline ? 'db-offline',
+  ]
+%}
+<!DOCTYPE html>
+<html{{ html_attributes }}>
+  <head>
+    <head-placeholder token="{{ placeholder_token|raw }}">
+    <title>{{ head_title|safe_join(' | ') }}</title>
+    <css-placeholder token="{{ placeholder_token|raw }}">
+    <js-placeholder token="{{ placeholder_token|raw }}">
+  </head>
+
+  <body{{ attributes.addClass(body_classes) }} style="background-color: white;">
+    <a href="#main-content" class="visually-hidden focusable skip-link">
+      {{ 'Skip to main content'|t }}
+    </a>
+
+
+
+    <!-- HEAD---------------------------- -->
+    <div class="head">
+      <div class="d-flex justify-content-center align-items-center row p-3 px-md-5 mb-2 bg-white">
+        <nav class="my-md-0 mr-md-3 col-sm text-left">
+{#          <a type="button" class="btn btn-bw m-1" href='#'>Обо мне</a>#}
+{#          <a type="button" class="btn btn-bw m-1" href='#'>Контакты</a>#}
+{#          <a type="button" class="btn btn-bw m-1" href='#'>Проекты</a>#}
+          {{ page.header_left }}
+        </nav>
+        <h4 class="my-2  font-weight-normal col-fluid text-center"> {{ page.header }}</h4>
+
+        <nav class="my-2 my-md-0 m-md-3 col-sm text-right">
+
+{#          {{ page.header_right }}#}
+          <a type="button" class="btn btn-bw m-1" href='https://vk.com/eugenepash'>VK</a>
+          <a type="button" class="btn btn-bw m-1" href="https://t.me/eugenepash">Telegram</a>
+          <a type="button" class="btn btn-bw m-1" href="mailto:jekpash@gmail.com">Email</a>
+        </nav>
+      </div>
+    </div>
+
+
+    <!-- CLOSE HEAD--------------------- -->
+
+    <!-- head mobile ----------------------------->
+
+    <div class="headMobile">
+
+
+
+      <nav class="navbar navbar-light bg-black">
+        <div class="container-fluid">
+          <button class="navBurger navbar-toggler d-flex justify-content-center align-items-center" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            <p class='m-0 p-0 ml-2'>Меню</p>
+          </button>
+          <h5 class="my-3 font-weight-normal col-fluid text-center">eugenepash/blog</h5>
+        </div>
+      </nav>
+
+      <div class="collapse" id="navbarToggleExternalContent">
+        <div class="subnav  p-4">
+          <a type="button" class="btn text-white m-1" href='#'>Обо мне</a>
+          <a type="button" class="btn text-white m-1" href='#'>Контакты</a>
+          <a type="button" class="btn text-white m-1" href='#'>Проекты</a>
+          <a type="button" class="btn text-white m-1" href='https://vk.com/eugenepash'>VK</a>
+          <a type="button" class="btn text-white m-1" href="https://t.me/eugenepash">Telegram</a>
+          <a type="button" class="btn text-white m-1" href="mailto:jekpash@gmail.com">Email</a>
+        </div>
+      </div>
+    </div>
+    <!-- cancel head mobile ----------------------------->
+
+
+{#    <!-- MAIN ----------------------------------- --->#}
+
+{#    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">#}
+{#      <h1 class="display-4 fw-3">Мои проекты</h1>#}
+
+{#    </div>#}
+
+{#    <div class="container">#}
+{#      <div class="row row-cols-1 row-cols-md-4 g-4">#}
+{#        <div class="col">#}
+{#          <div class="card rounded-0 h-100 shadow-lg">#}
+{#            <h5 class="card-title m-4 card-header">CoronaVirus Killer Game (demo)</h5>#}
+{#            <img src="themes/bootstrap_barrio/subtheme/assets/preview/corona.gif" class="card-img-top p-4" alt="...">#}
+{#            <div class="card-body">#}
+
+{#              <p class="card-text">Мини-игра для вашего браузера. Спасите человечество!</p>#}
+{#            </div>#}
+{#            <div class="card-footer bg-white">#}
+{#              <a type="button" class="btn btn-bw mb-2 btn-block p-2" href="themes/bootstrap_barrio/subtheme/assets/sites/coronavirusKillerGame/index.html">Перейти</a>#}
+{#            </div>#}
+{#          </div>#}
+{#        </div>#}
+{#        <div class="col">#}
+{#          <div class="card rounded-0 h-100 shadow-lg">#}
+{#            <h5 class="card-title m-4 card-header">Приход храма св.Николая Чудотворца</h5>#}
+{#            <img src="themes/bootstrap_barrio/subtheme/assets/preview/SCP.jpg" class="card-img-top p-4" alt="SCP">#}
+{#            <div class="card-body">#}
+
+{#              <p class="card-text">Сайт прихода храма св.Николая Чудотворца г.Поставы.</p>#}
+{#            </div>#}
+{#            <div class="card-footer bg-white">#}
+{#              <a type="button" class="btn btn-bw mb-2 btn-block p-2" href="themes/bootstrap_barrio/subtheme/assets/sites/SiteCercovPostavy/index.html">Перейти</a>#}
+{#            </div>#}
+{#          </div>#}
+{#        </div>#}
+{#        <div class="col">#}
+{#          <div class="card rounded-0 h-100 shadow-lg">#}
+{#            <h5 class="card-title m-4 card-header">Taimy Beats</h5>#}
+{#            <img src="themes/bootstrap_barrio/subtheme/assets/preview/metr.gif" class="card-img-top p-4" alt="metr">#}
+{#            <div class="card-body">#}
+
+{#              <p class="card-text">Сайт музыканта и битмейкера Taimy</p>#}
+{#            </div>#}
+{#            <div class="card-footer bg-white">#}
+{#              <a type="button" class="btn btn-bw mb-2 btn-block p-2" href='themes/bootstrap_barrio/subtheme/assets/sites/TaimyProject/index.html'>Перейти</a>#}
+{#            </div>#}
+{#          </div>#}
+{#        </div>#}
+{#        <div class="col">#}
+{#          <div class="card rounded-0 h-100 shadow-lg">#}
+{#            <h5 class="card-title m-4 card-header">Город домов</h5>#}
+{#            <img src="themes/bootstrap_barrio/subtheme/assets/preview/GorodDomov.jpg" class="card-img-top p-4" alt="...">#}
+{#            <div class="card-body">#}
+
+{#              <p class="card-text">GorodDomov.by</p>#}
+{#            </div>#}
+{#            <div class="card-footer bg-white">#}
+{#              <a type="button" class="btn btn-bw mb-2 btn-block p-2" href="themes/bootstrap_barrio/subtheme/assets/sites/Gorod-Domov-by/index.html">Перейти</a>#}
+{#            </div>#}
+{#          </div>#}
+{#        </div>#}
+{#      </div>#}
+{#    </div>#}
+
+
+{#    <footer class="pt-5 pt-md-5 mt-5 d-flex justify-content-center align-items-center">#}
+{#      <p class="card-text text-white text-center">site by <a class="eugenepash">eugenepash</a></p>#}
+{#    </footer>#}
+
+{#    <script>#}
+{#      let eugenepash = document.querySelector('.eugenepash');#}
+{#      let footer = document.querySelector('footer');#}
+
+{#      eugenepash.onmouseover = function() {#}
+{#        this.style.color = 'black';#}
+{#        footer.style.backgroundColor = 'white';#}
+
+
+
+{#      };#}
+{#      eugenepash.onmouseout = function() {#}
+{#        this.style.color = 'white';#}
+{#        footer.style.backgroundColor = 'black';#}
+{#      };#}
+
+{#    </script>#}
+
+
+
+
+
+    {{ page_top }}
+    {{ page }}
+    {{ page_bottom }}
+    <js-bottom-placeholder token="{{ placeholder_token|raw }}">
+  </body>
+
+</html>

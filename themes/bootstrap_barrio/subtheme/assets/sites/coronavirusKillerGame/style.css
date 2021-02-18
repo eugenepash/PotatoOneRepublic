@@ -1,0 +1,351 @@
+* {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{
+    margin: 0 auto;
+    background-color: #121111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;   
+}
+
+.headerGame{
+    position: absolute;
+    z-index: 90;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+h1{
+    color: white;
+}
+.headerGif{
+    background-image: url(images/corona.gif);
+    background-size: cover;
+    height: 200px;
+    width: 200px;
+}
+.area{
+    width: 1920px;
+    height: 1080px;
+    background-color: #121111;
+    overflow: hidden;
+    position: relative;
+}
+
+button {
+    cursor: pointer;
+}
+
+.head {
+    display: flex;
+    border-bottom: 2px solid white;
+    background: #121111;
+    z-index: 1;
+}
+
+.left {
+    display: flex;
+}
+
+.right_center {
+    display: flex;
+}
+.right{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.scoreDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    color: white;
+    background: #121111;
+    font-size: 15px;
+    border: 2px solid white;
+    width: 150px;
+    height: 50px;
+    margin-left: 10px;
+}
+.score{
+    margin-left: 5px;
+}
+.player {
+    height: 70px;
+    width: 70px;
+    background-image: url("images/antibody.png");
+    background-size: cover;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    color: white;
+
+}
+
+.playerNone {
+    display: none;
+}
+
+.startButton {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 40px;
+    width: 200px;
+    font-weight: 600;
+    z-index: 10;
+    background: #121111;
+    color: white;
+      border: 2px solid;
+     border-radius: 6px;
+      transition: 0.2s linear;
+} 
+.startButton:hover {
+    background: #fbc243;
+    color: black;
+}
+
+.stopButton {
+    margin: 20px;
+    display: none;
+    cursor: pointer;
+    z-index: 10;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background: #fbc243;
+    color: #121111;
+    height: 40px;
+    width: 200px;
+    font-weight: 600;
+    border: 2px solid ;
+      border-radius: 6px;
+      transition: 0.2s linear;
+}
+.stopButton:hover{
+    background: white;
+    color: #121111;
+}
+.settingsButton {
+    margin: 20px 20px 20px 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #121111;
+    color: white;
+    font-weight: 600;
+    z-index: 1;
+    border: 2px solid ;
+    border-radius: 6px;
+    transition: 0.2s linear;
+}
+.settingsButton:hover{
+    color: black;
+    background-color: #fbc243;
+}
+
+.popupSettings {
+    display: none;
+    position: fixed;
+    z-index: 20;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.close {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    height: 26px;
+    width: 26px;
+    border: 2px solid white;
+    border-radius: 26px;
+    cursor: pointer;
+    color: white;
+    float: right;
+    font-size: 35px;
+    font-weight: bold;
+    transition: all 0.2s linear;   
+}
+
+.close:hover,
+.close:focus {
+    color: #f5c50a;
+    border: 2px solid #f5c50a;
+    text-decoration: none;
+    transform: scale(1.2);
+}
+
+.settings-header {
+    padding: 20px 16px;
+    background-color: #121111;
+    color: white;
+}
+
+.settings-body {
+    padding: 2px 16px;
+    display: flex;
+}
+
+.settings-content {
+    position: relative;
+    background-color: floralwhite;
+    margin: auto;
+    padding: 0 0 20px;
+    border: 1px solid #888;
+    width: 80%;
+    height: 40%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+input {
+    cursor: pointer;
+}
+
+.eee {
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    margin-top: -12px;
+    content: ' ';
+    width: 0;
+    height: 0;
+
+}
+
+
+
+.setColor,
+.setForm
+{
+    margin: 10px;
+}
+
+#circleBad{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    
+    position: absolute;
+    
+    height: 60px;
+    width: 60px;
+    background:aliceblue;
+    border: 2px solid red;
+    border-radius: 50px;
+}
+
+
+.newDivPlus{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.newDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("images/corona.gif");
+    background-size: cover;
+
+}
+.colorPicker{
+    display: none;
+}
+
+
+
+
+
+.life{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    color: white;
+    background: #121111;
+    font-size: 15px;
+    border: 2px solid white;
+    width: 150px;
+    height: 50px;
+}
+.life_one{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("images/heart.png");
+    background-size: cover;
+    height: 30px;
+    width: 30px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.life_two{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("images/heart.png");
+    background-size: cover;
+    height: 30px;
+    width: 30px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.life_three{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("images/heart.png");
+    background-size: cover;
+    height: 30px;
+    width: 30px;
+    margin-left: 5px;
+    margin-right: 5px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

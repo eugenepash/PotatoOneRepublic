@@ -1,0 +1,23 @@
+name: Bootstrap Barrio Subtheme
+type: theme
+description: 'Basic structure for a Bootstrap Barrio SubTheme.'
+core: 8.x
+core_version_requirement: ^8 || ^9
+base theme: bootstrap_barrio
+
+libraries:
+  - bootstrap_barrio_subtheme/bootstrap_cdn
+  - bootstrap_barrio_subtheme/global-styling
+
+regions:
+
+  header: Header
+  header_left: 'Header left'
+  header_right: 'Header right'
+  content: Content
+  footer: Footer
+
+# Information added by Drupal.org packaging script on 2020-10-25
+version: '5.1.4'
+project: 'bootstrap_barrio'
+datestamp: 1603660712

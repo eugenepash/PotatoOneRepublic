@@ -1,0 +1,82 @@
+@media (min-width: 0px) and (max-width: 991.98px) { 
+    .headMobile{
+        display: block;
+    }
+    .head{
+        display: none;
+    }
+}
+@media (min-width: 991.98px) and (max-width: 3000px) { 
+    .headMobile{
+        display: none;
+    }
+    .head{
+        display: inherit;
+    }
+}
+
+
+.btn-bw {
+    border: 3px solid black;
+    border-radius: 0;
+}
+
+.btn-bw:hover {
+    background-color: black;
+    color: white;
+}
+
+.head{
+     border-bottom: 3px solid black;
+}
+.card{
+    border: 3px solid black;
+}
+.card-header{
+    background: white;
+    border-bottom: 3px solid black;
+}
+.card-body{
+    
+}
+.card-footer{
+   border-top : 0;  
+}
+footer{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    background-color: black;
+    height: 400px;
+    transition: 0.2s linear;
+}
+.eugenepash{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    color:white;
+    transition: 0.8s linear;
+    font-size: 20px;
+    padding: 10px;
+}
+.navbar{
+    border-bottom: 3px solid black;
+}
+.navBurger{
+    border: 3px solid black;
+    border-radius: 0;
+}
+
+.subnav{
+    background: black;
+    
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    
+    color: white;
+}
